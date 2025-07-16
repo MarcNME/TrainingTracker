@@ -1,0 +1,15 @@
+spring:
+  config:
+    import: file:.env[.properties]
+  application:
+    name: TrainingTracker
+  datasource:
+    url: jdbc:mariadb://localhost:3306/trainings_tracker
+
+    username: root
+    # password:           # In .env file
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto:  update

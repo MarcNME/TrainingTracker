@@ -1,0 +1,28 @@
+###
+GET http://localhost:8080/users
+
+###
+
+POST http://localhost:8080/user/add
+Content-Type: application/json
+
+{
+  "firstName": "Gunter",
+  "lastName": "Geiz",
+  "email": "marc@enzmann.dev",
+  "weightHistory": []
+}
+
+###
+
+GET http://localhost:8080/user/8125638c-0736-40a9-b7e0-cf18b030e80b
+
+###
+
+POST http://localhost:8080/user/8125638c-0736-40a9-b7e0-cf18b030e80b/weight
+Content-Type: application/json
+
+{
+  "weight": 88.7
+}
+###
