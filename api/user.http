@@ -9,7 +9,7 @@ Content-Type: application/json
 {
   "firstName": "Gunter",
   "lastName": "Geiz",
-  "email": "marc@enzmann.dev",
+  "email": "geiz.gunter@example.com",
   "weightHistory": []
 }
 
