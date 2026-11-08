@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
+import java.net.URI
 import java.util.UUID
 
 const val EXERCISE_PATH = "/exercise"
@@ -25,8 +26,8 @@ class ExerciseController(private val exerciseService: ExerciseService) {
 
     @PostMapping(EXERCISE_PATH)
     @Validated
-    fun addExercise(@RequestBody exercise: Exercise): ResponseEntity<Exercise> {
+    fun addExercise(@RequestBody exercise: Exercise): ResponseEntity<String> {
         val createdExercise = exerciseService.safe(exercise)
-        return ResponseEntity.created("$EXERCISE_PATH/${createdExercise.id}")
+        return ResponseEntity.created(URI("$EXERCISE_PATH/${createdExercise.id}")).build()
     }
 }

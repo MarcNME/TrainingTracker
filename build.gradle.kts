@@ -1,14 +1,17 @@
 plugins {
-    kotlin("jvm") version "2.2.0"
-    kotlin("plugin.spring") version "2.2.0"
-    id("org.jetbrains.kotlin.plugin.jpa") version "2.2.0"
-    id("org.springframework.boot") version "3.5.3"
+    val springVersion = "2.4.21"
+    val springBootVersion = "4.1.2"
+
+    kotlin("jvm") version springVersion
+    kotlin("plugin.spring") version springVersion
+    id("org.jetbrains.kotlin.plugin.jpa") version springVersion
+    id("org.springframework.boot") version springBootVersion
     id("io.spring.dependency-management") version "1.1.7"
 }
 
 buildscript {
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-noarg:2.2.0")
+        classpath("org.jetbrains.kotlin:kotlin-noarg:2.4.21")
     }
 }
 
@@ -18,7 +21,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 

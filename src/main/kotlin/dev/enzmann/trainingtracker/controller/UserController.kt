@@ -28,7 +28,7 @@ class UserController(private val userService: UserService) {
 
     @PostMapping("/user/{id}/weight")
     @Validated
-    fun addWeight(@PathVariable id: UUID, @RequestBody weight: UserWeight): ResponseEntity<User?> {
+    fun addWeight(@PathVariable id: UUID, @RequestBody weight: UserWeight): ResponseEntity<User> {
         val user = userService.getUserById(id)
         return ResponseEntity.ok(userService.addBodyWeight(user, weight))
     }

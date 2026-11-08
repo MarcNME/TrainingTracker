@@ -7,17 +7,14 @@ import dev.enzmann.trainingtracker.models.User
 import dev.enzmann.trainingtracker.models.UserWeight
 import org.springframework.stereotype.Service
 import java.util.*
-gi
+
 @Service
 class UserService(private val userRepository: UserRepository) {
     fun getUserById(id: UUID): User {
-        val user = userRepository.getUserById(id)
-        if (user == null) {
-            throw UserException(
-                id.toString(),
-                "User with id $id not found"
-            )
-        }
+        val user = userRepository.getUserById(id) ?: throw UserException(
+            id.toString(),
+            "User with id $id not found"
+        )
 
         return user
     }
